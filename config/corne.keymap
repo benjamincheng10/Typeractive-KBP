@@ -15,7 +15,7 @@
 
         Both {
             bindings = <&kp C>;
-            key-positions = <37 40>;
+            key-positions = <31 34>;
         };
     };
 
