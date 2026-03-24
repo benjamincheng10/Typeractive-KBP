@@ -10,25 +10,17 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        test {
-            timeout-ms = <100>;
-            bindings = <&kp V>;
-            key-positions = <16 15>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
 
         Alpha {
             bindings = <
-&trans  &kp V    &kp W  &kp F                  &kp P        &lt 3 TAB             &mo 6                &kp J        &kp U                      &kp L  &kp Y  &trans
-&trans  &lt 5 A  &kp R  &kp S                  &kp T        &mt LEFT_CONTROL G    &mt RIGHT_CONTROL H  &kp N        &kp E                      &kp I  &kp O  &trans
-&trans  &kp Z    &kp X  &kp C                  &kp D        &kp LEFT_ALT          &kp RIGHT_GUI        &kp M        &kp B                      &kp K  &kp Q  &trans
-                        &mt LEFT_SHIFT ESCAPE  &lt 1 SPACE  &lt 4 ENTER           &lt 4 ENTER          &lt 1 SPACE  &mt RIGHT_SHIFT BACKSPACE
+&trans  &kp V  &kp W  &kp F                  &kp P        &lt 3 TAB             &mo 6                &kp J        &kp U                      &kp L  &kp Y  &trans
+&trans  &kp A  &kp R  &kp S                  &kp T        &mt LEFT_CONTROL G    &mt RIGHT_CONTROL H  &kp N        &kp E                      &kp I  &kp O  &trans
+&trans  &kp Z  &kp X  &kp C                  &kp D        &kp LEFT_ALT          &kp RIGHT_GUI        &kp M        &kp B                      &kp K  &kp Q  &trans
+                      &mt LEFT_SHIFT ESCAPE  &lt 1 SPACE  &lt 6 ENTER           &lt 6 ENTER          &lt 2 SPACE  &mt RIGHT_SHIFT BACKSPACE
             >;
         };
 
@@ -37,7 +29,7 @@
 &trans  &trans         &kp UNDERSCORE  &kp AT_SIGN           &kp MINUS         &trans       &trans         &kp PLUS           &kp DOLLAR             &kp EQUAL        &trans            &trans
 &trans  &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp SLASH    &kp BACKSLASH  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &trans
 &trans  &kp PIPE       &kp GRAVE       &kp HASH              &kp ASTERISK      &trans       &trans         &kp AMPERSAND      &kp PERCENT            &kp TILDE        &kp CARET         &trans
-                                       &kp LS(CAPSLOCK)      &kp SPACE         &kp ENTER    &kp ENTER      &kp SPACE          &kp BACKSPACE
+                                       &caps_word            &kp SPACE         &kp ENTER    &kp ENTER      &kp SPACE          &kp BACKSPACE
             >;
         };
 
@@ -50,21 +42,21 @@
             >;
         };
 
-        Move {
-            bindings = <
-&trans  &trans  &kp LC(PLUS)    &msc SCRL_UP    &kp LC(MINUS)    &trans    &trans  &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &trans  &trans
-&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans  &kp LEFT     &kp DOWN      &kp RIGHT      &trans  &trans
-&trans  &trans  &trans          &trans          &trans           &trans    &trans  &kp HOME     &trans        &kp END        &trans  &trans
-                                &trans          &trans           &trans    &trans  &trans       &trans
-            >;
-        };
-
         Nav {
             bindings = <
 &trans  &trans     &kp LC(LG(LEFT_ARROW))  &kp LC(T)    &kp LC(LG(RIGHT_ARROW))  &trans           &trans  &kp RG(LEFT)         &kp RG(UP_ARROW)  &kp RG(RIGHT)    &trans     &trans
 &trans  &kp LG(D)  &kp LC(LS(TAB))         &kp LC(W)    &kp LC(TAB)              &kp LS(LC(T))    &trans  &kp RA(RS(ESCAPE))   &kp RG(DOWN)      &kp RA(ESCAPE)   &kp RC(N)  &trans
 &trans  &trans     &kp LC(LG(F4))          &kp LG(TAB)  &kp LC(LG(D))            &trans           &trans  &kt RS(RA(RC(TAB)))  &kp RA(F4)        &kp RA(RC(TAB))  &trans     &trans
                                            &trans       &trans                   &trans           &trans  &trans               &trans
+            >;
+        };
+
+        Move {
+            bindings = <
+&trans  &trans  &kp LC(PLUS)    &msc SCRL_UP    &kp LC(MINUS)    &trans    &trans  &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &trans  &trans
+&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans  &kp LEFT     &kp DOWN      &kp RIGHT      &trans  &trans
+&trans  &trans  &trans          &trans          &trans           &trans    &trans  &kp HOME     &trans        &kp END        &trans  &trans
+                                &trans          &trans           &trans    &trans  &trans       &trans
             >;
         };
 
@@ -84,6 +76,20 @@
 &trans  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &kp F5             &bt BT_SEL 4       &trans   &kp F6  &trans  &trans  &trans      &trans
                                        &trans        &trans             &trans             &trans   &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Move_layer {
+            if-layers = <1 2>;
+            then-layer = <4>;
+        };
+
+        Mouse_layer {
+            if-layers = <3 2>;
+            then-layer = <5>;
         };
     };
 };
