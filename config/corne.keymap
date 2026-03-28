@@ -29,7 +29,7 @@
 &trans  &trans         &kp UNDERSCORE  &kp AT_SIGN           &kp MINUS         &trans       &trans         &kp PLUS           &kp DOLLAR             &kp EQUAL        &trans            &trans
 &trans  &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp SLASH    &kp BACKSLASH  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp GREATER_THAN  &trans
 &trans  &kp PIPE       &kp GRAVE       &kp HASH              &kp ASTERISK      &trans       &trans         &kp AMPERSAND      &kp PERCENT            &kp TILDE        &kp CARET         &trans
-                                       &trans                &trans            &trans       &trans         &kp SPACE          &kp BACKSPACE
+                                       &trans                &trans            &trans       &kp ENTER      &kp SPACE          &kp BACKSPACE
             >;
         };
 
@@ -38,7 +38,7 @@
 &trans  &trans           &kp PERIOD       &kp COLON        &kp APOSTROPHE   &trans             &trans        &kp DOUBLE_QUOTES  &kp SEMICOLON    &kp COMMA        &trans           &trans
 &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &trans             &trans        &kp KP_NUMBER_7    &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &trans
 &trans  &trans           &trans           &trans           &kp KP_NUMBER_5  &kp EXCLAMATION    &kp QUESTION  &kp KP_NUMBER_6    &trans           &trans           &trans           &trans
-                                          &kp CAPSLOCK     &trans           &trans             &trans        &trans             &trans
+                                          &kp CAPSLOCK     &kp SPACE        &kp ENTER          &trans        &trans             &trans
             >;
         };
 
