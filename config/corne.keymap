@@ -17,7 +17,7 @@
 
         Alpha {
             bindings = <
-&trans  &kp V  &kp W  &kp F                  &kp P        &lt 5 TAB             &lt 5 INS            &kp J        &kp U                      &kp L  &kp Y  &trans
+&trans  &kp V  &kp W  &kp F                  &kp P        &lt 5 DELETE          &lt 5 TAB            &kp J        &kp U                      &kp L  &kp Y  &trans
 &trans  &kp A  &kp R  &kp S                  &kp T        &mt LEFT_CONTROL G    &mt RIGHT_CONTROL M  &kp N        &kp E                      &kp I  &kp O  &trans
 &trans  &kp Z  &kp X  &kp C                  &kp D        &kp LEFT_ALT          &kp RIGHT_GUI        &kp H        &kp B                      &kp K  &kp Q  &trans
                       &mt LEFT_SHIFT ESCAPE  &lt 1 SPACE  &lt 3 ENTER           &lt 4 ENTER          &lt 2 SPACE  &mt RIGHT_SHIFT BACKSPACE
